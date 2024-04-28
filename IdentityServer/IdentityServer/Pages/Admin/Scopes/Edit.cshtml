@@ -1,0 +1,41 @@
+﻿@page
+@model IdentityServer.Pages.Scopes.EditModel
+@{
+}
+
+<h2>
+    Edit Scope
+</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            
+            <input type="hidden" asp-for="@Model.InputModel.Id" />
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.Name"></label>
+                <input class="form-control" asp-for="@Model.InputModel.Name" autofocus />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.DisplayName"></label>
+                <input class="form-control" asp-for="@Model.InputModel.DisplayName" autofocus />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.Resources"></label>
+                <input class="form-control" asp-for="@Model.InputModel.Resources" autofocus />
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+                <a class="btn btn-secondary" asp-page="/Admin/Scopes/Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

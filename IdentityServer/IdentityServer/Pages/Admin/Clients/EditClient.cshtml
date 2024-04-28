@@ -1,0 +1,44 @@
+﻿@page
+@model IdentityServer.Pages.Clients.EditClient
+@{
+}
+
+<h2>
+    Edit Client
+</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.InputModel.Id" />
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.ClientId"></label>
+                <input class="form-control" asp-for="@Model.InputModel.ClientId" autofocus />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.DisplayName"></label>
+                <input class="form-control" asp-for="@Model.InputModel.DisplayName" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.RedirectUri"></label>
+                <input class="form-control" asp-for="@Model.InputModel.RedirectUri" autofocus />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.InputModel.PostLogoutRedirectUris"></label>
+                <input class="form-control" asp-for="@Model.InputModel.PostLogoutRedirectUris" autofocus />
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+                <a class="btn btn-secondary" asp-page="/Admin/Clients/Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

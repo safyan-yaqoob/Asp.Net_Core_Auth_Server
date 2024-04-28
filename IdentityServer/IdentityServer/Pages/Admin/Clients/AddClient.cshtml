@@ -1,0 +1,58 @@
+﻿@page
+@model IdentityServer.Pages.Clients.AddClient
+@{
+}
+
+<div class="clients-page">
+    @if (Model.Created)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Client Id <em>@Model.InputModel.ClientId</em> created</h2>
+                <p>The client secret is displayed below. Copy it now, as it won't be shown again.</p>
+                <p>Click here to <a asp-page="/Clients/EditClient" asp-route-id="@Model.InputModel.ClientId">continue</a>.</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>
+            Register New Client
+        </h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post">
+                    <div class="form-group">
+                        <label asp-for="@Model.InputModel.ClientId"></label>
+                        <input class="form-control" asp-for="@Model.InputModel.ClientId" autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.InputModel.DisplayName"></label>
+                        <input class="form-control" asp-for="@Model.InputModel.DisplayName" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.InputModel.RedirectUri"></label>
+                        <input class="form-control" asp-for="@Model.InputModel.RedirectUri" autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.InputModel.PostLogoutRedirectUris"></label>
+                        <input class="form-control" asp-for="@Model.InputModel.PostLogoutRedirectUris" autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                        <a class="btn btn-secondary" asp-page="/Admin/Clients/Index">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
