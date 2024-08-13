@@ -36,7 +36,3 @@ To set up the project:
 - **Logout Endpoint**: Implementation of the logout functionality.
 - **Login With External Identity Provider**: Configuration for external identity providers.
 - **Callback Endpoint**: Implementation of the callback endpoint for external authentication.
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
